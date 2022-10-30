@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "348962524487",
+    "project_id": "calfit-8576e",
+    "storage_bucket": "calfit-8576e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348962524487:android:2aeb6b2318a772a6129062",
+        "android_client_info": {
+          "package_name": "com.example.flutter_workout_app_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348962524487-r1nk7hbg3fnt5uff87c8q7u5c4h6j15s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD69Htm9eyAqK_gF36JTELD9FudIBS-QWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348962524487-r1nk7hbg3fnt5uff87c8q7u5c4h6j15s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
