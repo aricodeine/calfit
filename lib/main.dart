@@ -8,7 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: LogOrRegPage.id,
       routes: {
-        LogOrRegPage.id: (context) => LogOrRegPage(),
-        LoginPage.id: (context) => LoginPage(),
-        RegisterPage.id: (context) => RegisterPage(),
-        HomeNavigationBarPage.id: (context) => HomeNavigationBarPage(),
+        LogOrRegPage.id: (context) => const LogOrRegPage(),
+        LoginPage.id: (context) => const LoginPage(),
+        RegisterPage.id: (context) => const RegisterPage(),
+        HomeNavigationBarPage.id: (context) => const HomeNavigationBarPage(),
       },
     );
   }

@@ -14,7 +14,7 @@ class LogOrRegPage extends StatefulWidget {
 class _LogOrRegPageState extends State<LogOrRegPage> {
   @override
   Widget build(BuildContext context) {
-    final logo = Hero(
+    const logo = Hero(
       tag: 'hero',
       child: ImageIcon(
         AssetImage('assets/calfit_icon.png'),
@@ -51,10 +51,10 @@ class _LogOrRegPageState extends State<LogOrRegPage> {
             padding: const EdgeInsets.only(left: 24.0, right: 24.0),
             children: <Widget>[
               // logo,
-              SizedBox(
+              const SizedBox(
                 height: 15.0,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(

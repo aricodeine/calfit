@@ -9,8 +9,7 @@ class WorkoutReport extends StatefulWidget {
   State<WorkoutReport> createState() => _WorkoutReportState();
 }
 
-class _WorkoutReportState extends State<WorkoutReport>
-    with TickerProviderStateMixin {
+class _WorkoutReportState extends State<WorkoutReport> with TickerProviderStateMixin {
   List<Map<String, dynamic>> dates = [
     {
       'date': '1',
@@ -51,7 +50,7 @@ class _WorkoutReportState extends State<WorkoutReport>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 15, 15, 15),
+        backgroundColor: const Color.fromARGB(255, 15, 15, 15),
         body: Column(
           children: [
             Container(
@@ -61,9 +60,9 @@ class _WorkoutReportState extends State<WorkoutReport>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       Text(
                         'Hi,Ducky',
                         style: TextStyle(
@@ -128,7 +127,7 @@ class _WorkoutReportState extends State<WorkoutReport>
     );
   }
 
-  Widget dateCapsules() => Container(
+  Widget dateCapsules() => SizedBox(
       height: 70,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -139,7 +138,7 @@ class _WorkoutReportState extends State<WorkoutReport>
             height: 70,
             padding: const EdgeInsets.all(10),
             margin: const EdgeInsets.only(right: 10),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.black,
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(40),
@@ -151,13 +150,13 @@ class _WorkoutReportState extends State<WorkoutReport>
               children: [
                 Text(
                   date['date'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 17,
                   ),
                 ),
                 Text(
                   date['day'],
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     color: Colors.grey,
                   ),
@@ -186,7 +185,7 @@ class _WorkoutReportState extends State<WorkoutReport>
             Icon(icon),
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 letterSpacing: 0.4,

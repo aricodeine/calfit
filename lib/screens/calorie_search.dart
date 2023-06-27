@@ -14,7 +14,6 @@ class _CalorieSearchState extends State<CalorieSearch> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     calorieInputController.addListener(() {
@@ -32,7 +31,7 @@ class _CalorieSearchState extends State<CalorieSearch> {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             Padding(
@@ -45,7 +44,7 @@ class _CalorieSearchState extends State<CalorieSearch> {
                   ),
                   child: TextField(
                     controller: calorieInputController,
-                    style: TextStyle(fontSize: 16.0),
+                    style: const TextStyle(fontSize: 16.0),
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -58,7 +57,7 @@ class _CalorieSearchState extends State<CalorieSearch> {
                               onPressed: () {
                                 calorieInputController.clear();
                               },
-                              icon: Icon(Icons.close),
+                              icon: const Icon(Icons.close),
                             ),
                       // contentPadding: EdgeInsets.symmetric(
                       //   vertical: 15.0,
@@ -66,17 +65,17 @@ class _CalorieSearchState extends State<CalorieSearch> {
                       // ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20.0),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color.fromARGB(255, 1, 250, 225),
                           width: 1.6,
                         ),
                       ),
                       labelText: 'Calorie Intake',
-                      labelStyle: TextStyle(
+                      labelStyle: const TextStyle(
                         color: Color.fromARGB(255, 1, 250, 225),
                       ),
                       hintText: 'You had steak???',
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                         color: Colors.blueGrey,
                       ),
                     ),
@@ -95,8 +94,8 @@ class _CalorieSearchState extends State<CalorieSearch> {
                         Padding(
                           padding: const EdgeInsets.all(50.0),
                           child: Container(
-                            margin: EdgeInsets.symmetric(horizontal: 10.0),
-                            child: Text(
+                            margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: const Text(
                               'You consumed 500kcal',
                               textAlign: TextAlign.center,
                               style: kBodyTextStyle,

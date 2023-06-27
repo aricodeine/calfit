@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_workout_app_ui/report.dart';
 import 'package:flutter_workout_app_ui/screens/home_page.dart';
-import 'package:flutter_workout_app_ui/screens/calorie_search.dart';
 
 class HomeNavigationBarPage extends StatefulWidget {
   static String id = 'homenavigationbarpage';
@@ -36,9 +35,9 @@ class _HomeNavigationBarPageState extends State<HomeNavigationBarPage> {
           child: ElevatedButton(
               onPressed: () async {
                 await firebaseInstance.signOut();
-                Navigator.pop(context);
+                if (context.mounted) Navigator.pop(context);
               },
-              child: Text('Sign out')),
+              child: const Text('Sign out')),
         );
     }
     return Container();

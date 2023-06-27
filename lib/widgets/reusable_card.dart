@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class ReusableCard extends StatelessWidget {
-  const ReusableCard(
-      {Key? key, required this.colour, this.cardChild, this.onPress})
+  const ReusableCard({Key? key, required this.colour, this.cardChild, this.onPress})
       : super(key: key);
 
   final Color colour;
@@ -14,7 +13,7 @@ class ReusableCard extends StatelessWidget {
     return GestureDetector(
       onTap: onPress,
       child: Container(
-        margin: EdgeInsets.all(15.0),
+        margin: const EdgeInsets.all(15.0),
         decoration: BoxDecoration(
           color: colour,
           borderRadius: BorderRadius.circular(10.0),
@@ -24,5 +23,3 @@ class ReusableCard extends StatelessWidget {
     );
   }
 }
-
-void _dummyMethod() {}

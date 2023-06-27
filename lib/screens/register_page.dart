@@ -19,13 +19,12 @@ class _RegisterPageState extends State<RegisterPage> {
   Future signUp() async {
     try {
       final newUser = await firebaseInstance.createUserWithEmailAndPassword(
-          email: _emailController.text.trim(),
-          password: _passowrdController.text.trim());
+          email: _emailController.text.trim(), password: _passowrdController.text.trim());
       if (newUser != null) {
-        Navigator.pushNamed(context, HomeNavigationBarPage.id);
+        if (context.mounted) Navigator.pushNamed(context, HomeNavigationBarPage.id);
       }
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
   }
 
@@ -38,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    final logo = Hero(
+    const logo = Hero(
       tag: 'hero',
       child: ImageIcon(
         AssetImage('assets/calfit_icon.png'),
@@ -48,22 +47,22 @@ class _RegisterPageState extends State<RegisterPage> {
 
     final email = TextFormField(
       controller: _emailController,
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
       decoration: InputDecoration(
-        hintStyle: TextStyle(color: Colors.grey),
+        hintStyle: const TextStyle(color: Colors.grey),
         hintText: 'Email',
         contentPadding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.0),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               width: 2.0,
               // color: Colors.blue,
             )),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.0),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               width: 2.0,
               color: Color.fromARGB(255, 1, 250, 225),
             )),
@@ -72,22 +71,22 @@ class _RegisterPageState extends State<RegisterPage> {
 
     final password = TextFormField(
       controller: _passowrdController,
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       autofocus: false,
       obscureText: true,
       decoration: InputDecoration(
-        hintStyle: TextStyle(color: Colors.grey),
+        hintStyle: const TextStyle(color: Colors.grey),
         hintText: 'Password',
         contentPadding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(32.0),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
                 // color: Colors.green,
                 width: 1.0,
                 style: BorderStyle.solid)),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.0),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               width: 2.0,
               color: Color.fromARGB(255, 1, 250, 225),
             )),
@@ -104,17 +103,17 @@ class _RegisterPageState extends State<RegisterPage> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-          backgroundColor: Color.fromARGB(255, 0, 0, 0),
+          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
           body: Center(
             child: ListView(
               shrinkWrap: true,
               padding: const EdgeInsets.only(left: 24.0, right: 24.0),
               children: <Widget>[
                 // logo,
-                SizedBox(
+                const SizedBox(
                   height: 15.0,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(

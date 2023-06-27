@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_workout_app_ui/objects/food_object.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_workout_app_ui/widgets/bottom_button.dart';
 import 'package:flutter_workout_app_ui/bmi_calculator_brain.dart';
 import 'package:flutter_workout_app_ui/constants.dart';
@@ -24,11 +23,10 @@ class _HomePageState extends State<HomePage> {
   int weight = 74;
   int age = 19;
 
-  dynamic apiEndpoint =
-      Uri.parse('https://trackapi.nutritionix.com/v2/natural/nutrients');
+  dynamic apiEndpoint = Uri.parse('https://trackapi.nutritionix.com/v2/natural/nutrients');
 
-  static const _appID = "f588da3d";
-  static const _apiKey = "f0c7a520939244677ee63593c67f3cc2";
+  static const _appID = "Your app id";
+  static const _apiKey = "your api key";
 
   final Map<String, String> _apiPostRequestHeaders = {
     "Content-Type": "application/json",
@@ -57,8 +55,6 @@ class _HomePageState extends State<HomePage> {
       try {
         var data = json.decode(response.body.toString());
 
-        print(data);
-
         num cc = 0.0;
 
         for (var food in data["foods"]) {
@@ -69,22 +65,22 @@ class _HomePageState extends State<HomePage> {
                 quantity: food['serving_qty'],
                 calories: food['nf_calories']),
           );
-          print("food: $food");
+          debugPrint("food: $food");
         }
         // print("Total calories: $cc");
       } catch (e) {
-        print(e);
+        debugPrint(e.toString());
       }
     } else {
-      print(response.statusCode);
-      print(response.body);
+      debugPrint(response.statusCode.toString());
+      debugPrint(response.body.toString());
     }
     return foodFetchedData;
   }
 
   @override
   void initState() {
-    // TODO: implement initState
+    super.initState();
 
     calorieInputController.addListener(() {
       setState(() {});
@@ -117,9 +113,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Widget workoutAppBar() => Row(
+    Widget workoutAppBar() => const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
             Text(
               'Your Workouts',
               style: TextStyle(
@@ -157,21 +153,20 @@ class _HomePageState extends State<HomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Text(
+                                const Text(
                                   'HEIGHT',
                                   style: kLabelTextStyle,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.baseline,
+                                  crossAxisAlignment: CrossAxisAlignment.baseline,
                                   textBaseline: TextBaseline.alphabetic,
                                   children: <Widget>[
                                     Text(
                                       height.toString(),
                                       style: kNumberTextStyle,
                                     ),
-                                    Text(
+                                    const Text(
                                       'cm',
                                       style: kLabelTextStyle,
                                     ),
@@ -179,14 +174,14 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 SliderTheme(
                                   data: SliderTheme.of(context).copyWith(
-                                    thumbColor: Color(0xFFEB1555),
-                                    overlayColor: Color(0x29EB1555),
+                                    thumbColor: const Color(0xFFEB1555),
+                                    overlayColor: const Color(0x29EB1555),
                                     activeTrackColor: Colors.white,
-                                    inactiveTrackColor: Color(0xFF8D8E98),
-                                    thumbShape: RoundSliderThumbShape(
-                                        enabledThumbRadius: 15.0),
-                                    overlayShape: RoundSliderOverlayShape(
-                                        overlayRadius: 30.0),
+                                    inactiveTrackColor: const Color(0xFF8D8E98),
+                                    thumbShape:
+                                        const RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                                    overlayShape:
+                                        const RoundSliderOverlayShape(overlayRadius: 30.0),
                                   ),
                                   child: Slider(
                                     value: height.toDouble(),
@@ -206,21 +201,20 @@ class _HomePageState extends State<HomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Text(
+                                const Text(
                                   'WEIGHT',
                                   style: kLabelTextStyle,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.baseline,
+                                  crossAxisAlignment: CrossAxisAlignment.baseline,
                                   textBaseline: TextBaseline.alphabetic,
                                   children: <Widget>[
                                     Text(
                                       weight.toString(),
                                       style: kNumberTextStyle,
                                     ),
-                                    Text(
+                                    const Text(
                                       'kg',
                                       style: kLabelTextStyle,
                                     ),
@@ -228,14 +222,14 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 SliderTheme(
                                   data: SliderTheme.of(context).copyWith(
-                                    thumbColor: Color(0xFFEB1555),
-                                    overlayColor: Color(0x29EB1555),
+                                    thumbColor: const Color(0xFFEB1555),
+                                    overlayColor: const Color(0x29EB1555),
                                     activeTrackColor: Colors.white,
-                                    inactiveTrackColor: Color(0xFF8D8E98),
-                                    thumbShape: RoundSliderThumbShape(
-                                        enabledThumbRadius: 15.0),
-                                    overlayShape: RoundSliderOverlayShape(
-                                        overlayRadius: 30.0),
+                                    inactiveTrackColor: const Color(0xFF8D8E98),
+                                    thumbShape:
+                                        const RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                                    overlayShape:
+                                        const RoundSliderOverlayShape(overlayRadius: 30.0),
                                   ),
                                   child: Slider(
                                     value: weight.toDouble(),
@@ -258,8 +252,7 @@ class _HomePageState extends State<HomePage> {
                   BottomButton(
                     buttonTitle: 'CALCULATE',
                     onTap: () {
-                      CalculatorBrain calc =
-                          CalculatorBrain(height: height, weight: weight);
+                      CalculatorBrain calc = CalculatorBrain(height: height, weight: weight);
 
                       Navigator.push(
                           context,
@@ -267,13 +260,12 @@ class _HomePageState extends State<HomePage> {
                             builder: ((context) => BmiResultsPage(
                                   resultBMI: calc.calculateBMI(),
                                   resultText: calc.getResult(),
-                                  resultInterpretation:
-                                      calc.getInterpretation(),
+                                  resultInterpretation: calc.getInterpretation(),
                                 )),
                           ));
                     },
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(
                       left: 10.0,
                       right: 10.0,
@@ -300,21 +292,21 @@ class _HomePageState extends State<HomePage> {
                                 onPressed: () {
                                   calorieInputController.clear();
                                 },
-                                icon: Icon(Icons.close),
+                                icon: const Icon(Icons.close),
                               ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color.fromARGB(255, 1, 250, 225),
                             width: 1.6,
                           ),
                         ),
                         labelText: 'Calorie Intake',
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                           color: Color.fromARGB(255, 1, 250, 225),
                         ),
                         hintText: 'You had steak???',
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                           color: Colors.blueGrey,
                         ),
                       ),
@@ -323,17 +315,17 @@ class _HomePageState extends State<HomePage> {
                   BottomButton(
                     buttonTitle: 'Calorie Consumption',
                     onTap: () async {
-                      _apiPostRequestBody['query'] =
-                          calorieInputController.text.trim();
+                      _apiPostRequestBody['query'] = calorieInputController.text.trim();
                       List<FoodObject> food = await postAPIRequest();
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: ((context) =>
-                                CalorieConsumptionResultsPage(
-                                  foodData: food,
-                                )),
-                          ));
+                      if (context.mounted) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) => CalorieConsumptionResultsPage(
+                                    foodData: food,
+                                  )),
+                            ));
+                      }
                     },
                   ),
                 ],

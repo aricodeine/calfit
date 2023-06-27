@@ -29,8 +29,8 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.2
   dotted_border: ^2.0.0+2
-  firebase_auth: ^3.11.2
-  firebase_core: ^1.24.0
+  firebase_auth: ^4.6.3
+  firebase_core: ^2.14.0
   fl_chart: ^0.55.1
   font_awesome_flutter: ^10.1.0
   http: ^0.13.5

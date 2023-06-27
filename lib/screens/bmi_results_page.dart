@@ -22,7 +22,7 @@ class BmiResultsPage extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('BMI Result'),
+        title: const Text('BMI Result'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -30,8 +30,8 @@ class BmiResultsPage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Container(
-              margin: EdgeInsets.only(top: 20.0),
-              child: Text(
+              margin: const EdgeInsets.only(top: 20.0),
+              child: const Text(
                 'Your Result',
                 style: kTitleTextStyle,
               ),
@@ -54,7 +54,7 @@ class BmiResultsPage extends StatelessWidget {
                         style: kBMITextStyle,
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 10.0),
+                        margin: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
                           resultInterpretation,
                           textAlign: TextAlign.center,

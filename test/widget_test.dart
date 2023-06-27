@@ -8,7 +8,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_workout_app_ui/main.dart';
 import 'package:flutter_workout_app_ui/screens/log_or_reg_page.dart';
 
 void main() {

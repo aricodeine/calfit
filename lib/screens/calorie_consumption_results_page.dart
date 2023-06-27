@@ -1,4 +1,3 @@
-import 'package:flutter_workout_app_ui/widgets/horizontal_line.dart';
 import '../constants.dart';
 import 'package:flutter_workout_app_ui/widgets/reusable_card.dart';
 import 'package:flutter/material.dart';
@@ -41,18 +40,18 @@ class CalorieConsumptionResultsPage extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('BMI Result'),
+        title: const Text('BMI Result'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
             child: Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 20.0,
                 left: 15.0,
               ),
-              child: Text(
+              child: const Text(
                 'Your Calorie Consumption',
                 style: kTitleTextStyle,
               ),
@@ -121,7 +120,7 @@ class CalorieConsumptionResultsPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: SingleChildScrollView(
                     child: DataTable(
-                      columns: [
+                      columns: const [
                         DataColumn(
                           label: Text('Food'),
                         ),
